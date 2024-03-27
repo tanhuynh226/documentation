@@ -15,6 +15,7 @@ further_reading:
     text: "Building Better Dashboards"
 aliases:
     - /dashboards/reporting/
+    - /dashboards/scheduled_reports
 ---
 
 {{< site-region region="gov" >}}
