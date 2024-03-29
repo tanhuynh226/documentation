@@ -1226,11 +1226,21 @@ main:
     url: dashboards/sharing/
     parent: dashboards
     weight: 10
+  - name: Share Dashboards
+    identifier: dashboards_sharing_dashboards
+    url: dashboards/sharing/dashboards
+    parent: dashboards_sharing
+    weight: 1001
+  - name: Share Graphs
+    identifier: dashboards_sharing_graphs
+    url: dashboards/sharing/graphs
+    parent: dashboards_sharing
+    weight: 1002
   - name: Scheduled Reports
     identifier: dashboards_reporting
     url: dashboards/sharing/scheduled_reports
     parent: dashboards_sharing
-    weight: 1001
+    weight: 1003
   - name: Guides
     url: dashboards/guide/
     parent: dashboards

@@ -18,29 +18,22 @@ further_reading:
 
 ## Overview
 
-Sharing dashboards facilitates transparency, accountability, and alignment towards organizational goals, fostering a data-driven culture and improving decision-making processes.
+Shared visualizations allow you to display metric, trace, and log visualizations outside of Datadog. Share visualizations to enhance decision-making and problem-solving processes with team members. 
 
-The document provides step-by-step instructions on how to share dashboards securely while controlling access and permissions to ensure data privacy and compliance. It also highlights the benefits of sharing dashboards for collaboration, communication, and fostering a data-driven culture within teams and organizations.
+{{< whatsnext desc="How to share visualizations:" >}}
+   {{< nextlink href="dashboards/sharing/dashboards" >}}<strong>Share dashboards</strong>: Generate a public link for users to access{{< /nextlink >}}
+   {{< nextlink href="dashboards/sharing/graphs" >}}<strong>Share graphs</strong>: Generate an embed code{{< /nextlink >}}
+   {{< nextlink href="dashboards/sharing/scheduled_reports" >}}<strong>Scheduled reports</strong>: Set a schedule to send email reports{{< /nextlink >}}
+{{< /whatsnext >}}
 
+## View all public dashboards and graphs
 
-
-Sharing dashboards is important for collaboration and communication within a team or organization. It allows team members to easily share important insights, metrics, and data visualizations with each other, enhancing decision-making and problem-solving processes. Sharing dashboards also promotes transparency and accountability, as it enables stakeholders to have a unified view of the data and performance metrics. Overall, sharing dashboards helps in fostering a data-driven culture and facilitates better teamwork and alignment towards organizational goals.
-
-The benefits of sharing dashboards or data visualizations include:
-
-Collaboration: Sharing allows team members to work together, discuss insights, and make informed decisions based on the same data.
-
-Communication: Shared dashboards facilitate clear communication of metrics, trends, and performance indicators across teams and stakeholders.
-
-Transparency: Sharing provides visibility into key data and metrics, promoting transparency and accountability within an organization.
-
-Efficiency: By sharing dashboards, time is saved on manually compiling and distributing reports, enabling quick access to real-time data.
-
-Decision-making: Shared dashboards help in making data-driven decisions, as stakeholders have access to relevant information and insights.
-
-Alignment: Sharing dashboards ensures that all team members are aligned on organizational goals and performance metrics, fostering a unified understanding.
-
+To see the complete list of publicly shared dashboards, navigate to [**Organization Settings > Public Sharing > Shared Dashboards**][1]. Click the **Shared Graphs** tab to view publicly shared graphs from your organization. To revoke access, see the [dashboard][2] and [graph][3] documentation.
 
 ## Further reading
 
 {{< partial name="whats-next/whats-next.html" >}}
+
+[1]: https://app.datadoghq.com/organization-settings/public-sharing/shared-dashboards
+[2]: dashboards/sharing/dashboards/#revoke
+[3]: dashboards/sharing/graphs/#revoke

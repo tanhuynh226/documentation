@@ -10,16 +10,13 @@ further_reading:
   - link: "https://www.datadoghq.com/blog/template-variable-associated-values/"
     tag: "Blog"
     text: "Use associated template variables to refine your dashboards"
-  - link: "https://learn.datadoghq.com/courses/building-better-dashboards"
-    tag: "Learning Center"
-    text: "Building Better Dashboards"
 aliases:
     - /dashboards/reporting/
     - /dashboards/scheduled_reports
 ---
 
 {{< site-region region="gov" >}}
-<div class="alert alert-warning">Scheduled Reports are not supported for this site.</div>
+<div class="alert alert-warning">Scheduled Reports is not supported for your selected <a href="/getting_started/site">Datadog site</a> ({{< region-param key="dd_site_name" >}}).</div>
 {{< /site-region >}}
 
 ## Overview
