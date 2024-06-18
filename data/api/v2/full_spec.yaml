@@ -17574,6 +17574,19 @@ components:
       required:
       - status
       type: object
+    SecurityMonitoringRuleConvertRequest:
+      description: Convert the rule from JSON to Terraform.
+      oneOf:
+      - $ref: '#/components/schemas/SecurityMonitoringStandardRuleCreatePayload'
+      - $ref: '#/components/schemas/SecurityMonitoringSignalRuleCreatePayload'
+      - $ref: '#/components/schemas/CloudConfigurationRuleCreatePayload'
+    SecurityMonitoringRuleConvertResponse:
+      description: Result of the test of the rule queries.
+      properties:
+        terraformContent:
+          description: Terraform string as a result of converting the rule query payloads.
+          type: string
+      type: object
     SecurityMonitoringRuleCreatePayload:
       description: Create a new rule.
       oneOf:
@@ -35127,6 +35140,45 @@ paths:
         - name: rule_id
           source: id
         type: unsafe
+  /api/v2/security_monitoring/rules/convert:
+    post:
+      description: Convert a rule from JSON to Terraform.
+      operationId: ConvertSecurityMonitoringRuleFromJSONToTerraform
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityMonitoringRuleConvertRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityMonitoringRuleConvertResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '401':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - security_monitoring_rules_write
+      summary: Convert a rule from JSON to Terraform
+      tags:
+      - Security Monitoring
+      x-codegen-request-body-name: body
+      x-menu-order: 12
+      x-undo:
+        type: idempotent
   /api/v2/security_monitoring/rules/test:
     post:
       description: Test a rule.
@@ -35299,6 +35351,40 @@ paths:
       x-menu-order: 6
       x-undo:
         type: idempotent
+  /api/v2/security_monitoring/rules/{rule_id}/convert:
+    get:
+      description: Convert an existing rule from JSON to Terraform.
+      operationId: ConvertExistingSecurityMonitoringRule
+      parameters:
+      - $ref: '#/components/parameters/SecurityMonitoringRuleID'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityMonitoringRuleConvertResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '401':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - security_monitoring_rules_write
+      summary: Convert an existing rule from JSON to Terraform
+      tags:
+      - Security Monitoring
+      x-menu-order: 11
+      x-undo:
+        type: idempotent
   /api/v2/security_monitoring/rules/{rule_id}/test:
     post:
       description: Test an existing rule.
@@ -35418,7 +35504,7 @@ paths:
       summary: Get a quick list of security signals
       tags:
       - Security Monitoring
-      x-menu-order: 12
+      x-menu-order: 14
       x-pagination:
         cursorParam: page[cursor]
         cursorPath: meta.page.after
@@ -35462,7 +35548,7 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-menu-order: 11
+      x-menu-order: 13
       x-pagination:
         cursorParam: body.page.cursor
         cursorPath: meta.page.after
