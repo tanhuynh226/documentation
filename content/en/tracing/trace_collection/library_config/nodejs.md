@@ -20,7 +20,7 @@ further_reading:
     - link: 'tracing/'
       tag: 'Documentation'
       text: 'Advanced Usage'
-    - link: "/opentelemetry/interoperability/environment_variable_support.md"
+    - link: "/opentelemetry/interoperability/environment_variable_support"
       tag: "Documentation"
       text: "OTEL Environment Variable Configurations"
 ---
@@ -274,4 +274,4 @@ For more examples of how to work with the library see [API documentation][2].
 [4]: /help/
 [5]: /tracing/trace_collection/trace_context_propagation/nodejs
 [13]: /agent/configuration/network/#configure-ports
-[14]: /opentelemetry/interoperability/environment_variable_support.md
+[14]: /opentelemetry/interoperability/environment_variable_support
